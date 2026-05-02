@@ -1,0 +1,18 @@
+name: Verify Human Identity - Zenkun25
+
+on:
+  workflow_dispatch:
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup & Run Verification
+        run: |
+          npm install -g clawhub
+          npx clawhub@latest install verified-agent-identity
+          cd scripts || true
+          npm install || true
+          node manualLinkHumanToAgent.js --challenge '{"name":"Zenkun25 AI Agent","description":"Zenkun25 AI Agent on Billions Network"}' || echo "Workflow completed"
