@@ -4,14 +4,14 @@ on:
   workflow_dispatch:
 
 jobs:
-  verify:
+  setup:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
 
-      - name: Setup & Verify
+      - name: Install ClawHub
         run: |
           npm install -g clawhub
           npx clawhub@latest install verified-agent-identity
-          echo "ClawHub installed successfully for Zenkun25"
-          echo "Coba jalankan manual nanti di Codespaces atau Termux"
+          echo "✅ ClawHub & Verified Agent Identity berhasil diinstall untuk Zenkun25"
+          echo "Sekarang buka GitHub Codespaces atau Termux untuk jalankan manualLinkHumanToAgent.js"
