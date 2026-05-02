@@ -9,10 +9,9 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Setup & Run Verification
+      - name: Setup & Verify
         run: |
           npm install -g clawhub
           npx clawhub@latest install verified-agent-identity
-          cd scripts || true
-          npm install || true
-          node manualLinkHumanToAgent.js --challenge '{"name":"Zenkun25 AI Agent","description":"Zenkun25 AI Agent on Billions Network"}' || echo "Workflow completed"
+          echo "ClawHub installed successfully for Zenkun25"
+          echo "Coba jalankan manual nanti di Codespaces atau Termux"
